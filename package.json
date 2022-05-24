@@ -1,0 +1,12 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./test.scss:./test.css",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer ./public/css/prefixed/"
+  },
+  "author": "TomP",
+  "license": "ISC",
+  "description": ""
+}

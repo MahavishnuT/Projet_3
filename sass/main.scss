@@ -1,0 +1,7 @@
+@mixin hello {
+    background-color: aliceblue;
+}
+
+.hello {
+    @include hello();
+}
