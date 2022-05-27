@@ -1,0 +1,20 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    .logo {
+        position: relative;
+        left: 50%;
+        img {
+            scale: 0.5;
+        }
+    }
+
+    .arrow {
+        margin-left: 25px;
+        scale: 1.5;
+        i {
+            color: $colour-footer;
+        }
+    }
+}

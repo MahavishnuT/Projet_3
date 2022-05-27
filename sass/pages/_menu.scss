@@ -1,0 +1,10 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    .image-menu {
+        width: 100%;
+        img {
+            width: fit-content;
+        }
+    }
+}
