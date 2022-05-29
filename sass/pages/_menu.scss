@@ -1,10 +1,39 @@
-.menu {
-    display: flex;
-    flex-direction: column;
-    .image-menu {
+.image {
+    &-menu {
         width: 100%;
         img {
-            width: fit-content;
+            width: 100%;
         }
     }
+}
+
+.menu {
+    position: relative;
+    top: -60px;
+    display: flex;
+    flex-direction: column;
+    background-color: $colour-background;
+    @include padding-menu;
+    border-radius: 50px 50px 0 0;
+    &__title {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        &--h1 {
+            @include font-title;
+        }
+        .card__body--heart {
+            align-self: center;
+            .fa-heart {
+                text-shadow: 1px 1px black;
+                color: aqua;
+            }
+        }
+    }
+    &__cards {
+        display: flex;
+        flex-direction: column;
+    }
+
 }

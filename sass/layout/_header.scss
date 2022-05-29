@@ -1,17 +1,18 @@
 header {
     display: flex;
+    position: sticky;
     align-items: center;
     justify-items: center;
     .logo {
-        position: relative;
-        left: 50%;
+        margin-left: auto;
+        margin-right: auto;
         img {
             scale: 0.5;
         }
     }
-
     .arrow {
-        margin-left: 25px;
+        position: relative;
+        left: 30px;
         scale: 1.5;
         i {
             color: $colour-footer;
