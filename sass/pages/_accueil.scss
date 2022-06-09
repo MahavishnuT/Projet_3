@@ -1,0 +1,52 @@
+.accueil {
+    background-color: $colour-background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__location {
+        margin: 20px 0 0 0;
+        .fa-location-dot {
+            padding: 10px;
+        }
+    }
+    &__top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+            text-align: center;
+        }
+        &--excerpt {
+            font-size: 25px;
+            text-align: center;
+            width: 80%;
+        }
+    }
+}
+
+.fonctionnement {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    ol {
+        list-style: none;
+        padding-left: 0;
+        margin-right: 20px;
+        li {
+            background-color: $colour-background;
+            height: 70px;
+            border-radius: 30px;
+            margin: 15px 0;
+            text-align: center;
+            .number {
+                position: relative;
+                left: -30%;
+                top: 40%;
+                padding: 5px 10px;
+                background-color: $colour-primary;
+                color: white;
+                border-radius: 100%;
+            }
+        }
+    }
+}

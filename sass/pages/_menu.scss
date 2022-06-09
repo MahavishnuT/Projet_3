@@ -26,14 +26,24 @@
         .card__body--heart {
             align-self: center;
             .fa-heart {
-                text-shadow: 1px 1px black;
-                color: aqua;
+                text-shadow: 0 0 3px black;
+                color: $colour-background;
+                
             }
         }
     }
     &__cards {
         display: flex;
         flex-direction: column;
+        &--underline {
+            background-color: $colour-tertiary;
+            width: 60px;
+            height: 5px;
+            margin-bottom: 5px;
+        }
+        &--title {
+            margin-bottom: 5px;
+        }
     }
 
 }

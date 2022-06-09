@@ -1,9 +1,550 @@
-@import normalize.css;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap");
+* {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
 
+ul {
+  list-style: none;
+}
 
+a {
+  text-decoration: none;
+}
 
-.hello {
-  background-color: aliceblue;
+.menu__cards--title {
+  font-weight: 50;
+  text-transform: uppercase;
+}
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 60px;
+}
+footer h3 {
+  font-family: Shrikhand, Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  margin: 25px 0 0 25px;
+}
+footer ul {
+  margin-left: 25px;
+  padding: 0%;
+  font-size: small;
+}
+footer ul li {
+  margin: 7px 0;
+}
+footer ul li a {
+  color: white;
+}
+footer ul li i {
+  padding-right: 5px;
+}
+
+header {
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-items: center;
+}
+header .logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+header .logo img {
+  scale: 0.5;
+}
+header .arrow {
+  position: relative;
+  left: 30px;
+  scale: 1.5;
+}
+header .arrow i {
+  color: #353535;
+}
+
+.image-menu {
+  width: 100%;
+}
+.image-menu img {
+  width: 100%;
+}
+
+.menu {
+  position: relative;
+  top: -60px;
+  display: flex;
+  flex-direction: column;
+  background-color: #e4e4e4;
+  padding: 0 20px;
+  border-radius: 50px 50px 0 0;
+}
+.menu__title {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.menu__title--h1 {
+  font-family: Shrikhand, Arial, Helvetica, sans-serif;
+  font-size: 40px;
+}
+.menu__title .card__body--heart {
+  align-self: center;
+}
+.menu__title .card__body--heart .fa-heart {
+  text-shadow: 0 0 3px black;
+  color: #e4e4e4;
+}
+.menu__cards {
+  display: flex;
+  flex-direction: column;
+}
+.menu__cards--underline {
+  background-color: #99e2d0;
+  width: 60px;
+  height: 5px;
+  margin-bottom: 5px;
+}
+.menu__cards--title {
+  margin-bottom: 5px;
+}
+
+.accueil {
+  background-color: #e4e4e4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.accueil__location {
+  margin: 20px 0 0 0;
+}
+.accueil__location .fa-location-dot {
+  padding: 10px;
+}
+.accueil__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.accueil__top h1 {
+  text-align: center;
+}
+.accueil__top--excerpt {
+  font-size: 25px;
+  text-align: center;
+  width: 80%;
+}
+
+.fonctionnement {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.fonctionnement ol {
+  list-style: none;
+  padding-left: 0;
+  margin-right: 20px;
+}
+.fonctionnement ol li {
+  background-color: #e4e4e4;
+  height: 70px;
+  border-radius: 30px;
+  margin: 15px 0;
+  text-align: center;
+}
+.fonctionnement ol li .number {
+  position: relative;
+  left: -30%;
+  top: 40%;
+  padding: 5px 10px;
+  background-color: #9356DC;
+  color: white;
+  border-radius: 100%;
+}
+
+.menu__cards--card {
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  height: 80px;
+}
+.menu__cards--card h3 {
+  margin: 5px 0 5px 15px;
+}
+.menu__cards--card .excerpt {
+  margin: 5px 0 5px 15px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: no-wrap;
+  overflow: hidden;
+}
+.menu__cards--card .price {
+  position: relative;
+  left: 90%;
+  bottom: 35px;
+  font-weight: bold;
+}
+.menu__cards--card .check {
+  position: relative;
+  left: 100%;
+  bottom: 55px;
+}
+
+button {
+  width: 250px;
+  height: 70px;
+  color: white;
+  font-size: larger;
+  background-color: black;
+  border-radius: 50px;
+  align-self: center;
+  margin: 20px 0;
+  box-shadow: 1px 3px;
 }
 
 /*# sourceMappingURL=style.css.map */
