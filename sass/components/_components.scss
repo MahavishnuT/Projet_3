@@ -7,13 +7,17 @@
     height: 80px;
     h3 {
         @include margin-cards;
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: no-wrap;
+
     }
     .excerpt {
         @include margin-cards;
         display: inline-block;
         text-overflow: ellipsis;
         white-space: no-wrap;
-        overflow: hidden;
+
     }
     .price {
         position: relative;

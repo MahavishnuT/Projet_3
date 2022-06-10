@@ -3,6 +3,7 @@ header {
     position: sticky;
     align-items: center;
     justify-items: center;
+    @include box-shadow;
     .logo {
         margin-left: auto;
         margin-right: auto;
