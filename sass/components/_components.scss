@@ -6,6 +6,7 @@
     flex-direction: column;
     margin: 10px 0;
     height: 80px;
+    //overflow: hidden;
     h3 {
         @include margin-cards;
         display: inline-block;
@@ -29,16 +30,43 @@
     .check {
         position: relative;
         justify-self: center;
-        padding: 40px;
+        width: fit-content;
         left: 102%;
-        bottom: 95px;
-        background-color: $colour-tertiary;
+        bottom: 70%;
         color: $colour-font;
         font-size: 25px;
     }
-    &:hover .check{
-        animation: translate-check 500ms ease-in-out infinite;
+    .background {
+        background-color: $colour-tertiary;
+        padding: 40px;
+        position: relative;
+        bottom: 107px;
+        left: 368px;
+        z-index: -1;    
     }
+/*     .check::after {
+        content: '';
+        height: 80px;
+        width: 100px;
+        background: $colour-tertiary;
+        display: flex;
+        position: relative;
+        bottom: 51px;
+        right: 50px;
+        z-index: -1;
+    } */
+    &:active .check {
+        animation: translate-check 500ms ease-in-out both;
+    }
+    &:active .price {
+        animation: translate-price 500ms ease-in-out both;
+    }
+    &:active .background {
+        animation: translate-background 500ms ease-in-ouy both;
+    }
+/*     &:active .check::after {
+        animation: translate-background 500ms ease-in-out both;
+    } */
 }
 
 @keyframes translate-check {
@@ -46,8 +74,25 @@
         transform: translateX(0);
     }
     100% {
+        transform: translateX(-100px) rotate(360deg);
+    }
+}
+
+@keyframes translate-price {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
         transform: translateX(-100px);
-        rotate: 360;
+    }
+}
+
+@keyframes translate-background {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100px);
     }
 }
 

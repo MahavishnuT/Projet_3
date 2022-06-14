@@ -558,6 +558,20 @@ header .arrow i {
   flex-direction: column;
   margin: 10px 0;
   height: 80px;
+  /*     .check::after {
+          content: '';
+          height: 80px;
+          width: 100px;
+          background: $colour-tertiary;
+          display: flex;
+          position: relative;
+          bottom: 51px;
+          right: 50px;
+          z-index: -1;
+      } */
+  /*     &:active .check::after {
+          animation: translate-background 500ms ease-in-out both;
+      } */
 }
 .menu__cards--card h3 {
   margin: 5px 0 5px 15px;
@@ -580,15 +594,28 @@ header .arrow i {
 .menu__cards--card .check {
   position: relative;
   justify-self: center;
-  padding: 40px;
+  width: fit-content;
   left: 102%;
-  bottom: 95px;
-  background-color: #99e2d0;
+  bottom: 70%;
   color: white;
   font-size: 25px;
 }
-.menu__cards--card:hover .check {
-  animation: translate-check 500ms ease-in-out infinite;
+.menu__cards--card .background {
+  background-color: #99e2d0;
+  padding: 40px;
+  position: relative;
+  bottom: 107px;
+  left: 368px;
+  z-index: -1;
+}
+.menu__cards--card:active .check {
+  animation: translate-check 500ms ease-in-out both;
+}
+.menu__cards--card:active .price {
+  animation: translate-price 500ms ease-in-out both;
+}
+.menu__cards--card:active .background {
+  animation: translate-background 500ms ease-in-ouy both;
 }
 
 @keyframes translate-check {
@@ -596,8 +623,23 @@ header .arrow i {
     transform: translateX(0);
   }
   100% {
+    transform: translateX(-100px) rotate(360deg);
+  }
+}
+@keyframes translate-price {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
     transform: translateX(-100px);
-    rotate: 360;
+  }
+}
+@keyframes translate-background {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100px);
   }
 }
 button {
