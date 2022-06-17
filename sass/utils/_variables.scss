@@ -43,3 +43,16 @@ $font-general: Roboto, Arial, Helvetica, sans-serif;
 @mixin translate-animation-out($translate-object) {
     animation: $translate-object 500ms ease-in-out both;
 }
+
+@mixin circle-loader($colour, $delay) {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-left-color: $colour;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: (-50%);
+    animation: spin 2s cubic-bezier(.74,0,.16,1) $delay 3 forwards;
+}
