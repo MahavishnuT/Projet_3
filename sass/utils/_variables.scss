@@ -35,3 +35,11 @@ $font-general: Roboto, Arial, Helvetica, sans-serif;
 @mixin box-shadow {
     box-shadow: 0px 10px 41px -34px rgba(0, 0, 0, 1);
 }
+
+@mixin translate-animation-in($translate-object) {
+    animation: $translate-object 500ms ease-in-out both;
+}
+
+@mixin translate-animation-out($translate-object) {
+    animation: $translate-object 500ms ease-in-out both;
+}

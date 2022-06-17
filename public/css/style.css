@@ -439,7 +439,7 @@ header .arrow i {
   align-self: center;
 }
 .menu__title .card__body--heart .fa-heart {
-  text-shadow: 0 0 3px black;
+  text-shadow: 0 0 1px black;
   color: #f6f6f6;
 }
 .menu__cards {
@@ -558,90 +558,112 @@ header .arrow i {
   flex-direction: column;
   margin: 10px 0;
   height: 80px;
-  /*     .check::after {
-          content: '';
-          height: 80px;
-          width: 100px;
-          background: $colour-tertiary;
-          display: flex;
-          position: relative;
-          bottom: 51px;
-          right: 50px;
-          z-index: -1;
-      } */
-  /*     &:active .check::after {
-          animation: translate-background 500ms ease-in-out both;
-      } */
+  /*     overflow: hidden; */
 }
 .menu__cards--card h3 {
   margin: 5px 0 5px 15px;
   display: inline-block;
   text-overflow: ellipsis;
   white-space: no-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 20px;
 }
 .menu__cards--card .excerpt {
   margin: 5px 0 5px 15px;
   display: inline-block;
   text-overflow: ellipsis;
   white-space: no-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 20px;
 }
 .menu__cards--card .price {
   position: relative;
   left: 90%;
   bottom: 35px;
   font-weight: bold;
+  transition: transform 500ms ease-in-out;
+  /*         @include translate-animation-in(translate-price-in);
+   */
 }
 .menu__cards--card .check {
   position: relative;
   justify-self: center;
   width: fit-content;
-  left: 102%;
+  left: 109%;
   bottom: 70%;
   color: white;
   font-size: 25px;
+  z-index: 1;
+  transition: transform 500ms ease-in-out;
+  /*         @include translate-animation-in(translate-check-in);
+   */
 }
 .menu__cards--card .background {
   background-color: #99e2d0;
   padding: 40px;
+  width: 50px;
   position: relative;
   bottom: 107px;
-  left: 368px;
-  z-index: -1;
+  left: 105%;
+  transition: transform 500ms ease-in-out;
+  /*         @include translate-animation-in(translate-background-in);
+   */
 }
-.menu__cards--card:active .check {
-  animation: translate-check 500ms ease-in-out both;
+.menu__cards--card:hover .check {
+  transform: translateX(-100px) rotate(360deg);
+  /*         @include translate-animation-out(translate-check-out);
+   */
 }
-.menu__cards--card:active .price {
-  animation: translate-price 500ms ease-in-out both;
+.menu__cards--card:hover .price {
+  transform: translateX(-100px);
+  /*         @include translate-animation-out(translate-price-out);
+   */
 }
-.menu__cards--card:active .background {
-  animation: translate-background 500ms ease-in-ouy both;
+.menu__cards--card:hover .background {
+  transform: translateX(-100px);
+  /*         @include translate-animation-out(translate-background-out);
+   */
 }
 
-@keyframes translate-check {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100px) rotate(360deg);
-  }
+/* @keyframes translate-check-in {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100px) rotate(360deg);
+    }
 }
-@keyframes translate-price {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100px);
-  }
+
+@keyframes translate-check-out {
+    0% {
+        transform: translate(-100px);
+    }
+    100% {
+        transform: translate(0px);
+    }
 }
-@keyframes translate-background {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100px);
-  }
+
+@keyframes translate-price-in {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100px);
+    }
 }
+
+@keyframes translate-background-in {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100px);
+    }
+} */
 button {
   width: 250px;
   height: 70px;
