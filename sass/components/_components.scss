@@ -7,8 +7,10 @@
     margin: 10px 0;
     height: 80px;
     overflow: hidden;
+    @include appearing;
     h3 {
         @include margin-cards;
+        width: fit-content;
         display: inline-block;
         text-overflow: ellipsis;
         white-space: no-wrap;
@@ -16,10 +18,11 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         min-height: 20px;
-
+        z-index: 1;
     }
     .excerpt {
         @include margin-cards;
+        width: fit-content;
         display: inline-block;
         text-overflow: ellipsis;
         white-space: no-wrap;
@@ -27,7 +30,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         min-height: 20px;
-
+        z-index: 1;
 
     }
     .price {
@@ -36,22 +39,23 @@
         bottom: 35px;
         font-weight: bold;
         transition: transform 500ms ease-in-out;
-/*         @include translate-animation-in(translate-price-in);
- */    }
-    .check {
+        z-index: 1;
+    }
+    .wraper {
+        transition: transform 500ms ease-in-out;
+        display: flex;
         position: relative;
-        justify-self: center;
         width: fit-content;
         left: 109%;
         bottom: 70%;
-        color: $colour-font;
-        font-size: 25px;
         z-index: 1;
-        transition: transform 500ms ease-in-out;
-        // Petit problème, j'arrive pas à ce que .check retourne
-        // à sa place initiale sans rotate, comme dans l'exemple
-/*         @include translate-animation-in(translate-check-in);
- */    }
+        color: $colour-font;
+        .check {
+            color: $colour-font;
+            font-size: 25px;
+            z-index: 1;
+        }
+    }
     .background {
         background-color: $colour-tertiary;
         padding: 40px;
@@ -60,57 +64,32 @@
         bottom: 107px;
         left: 105%;
         transition: transform 500ms ease-in-out;
-/*         @include translate-animation-in(translate-background-in);
- */    }
+    }
     &:hover .check {
-        transform: translateX(-100px) rotate(360deg);  
-/*         @include translate-animation-out(translate-check-out);
- */    }
+        transform: rotate(360deg);  
+        transition: transform 500ms ease-in-out;
+    }
     &:hover .price {
-        transform: translateX(-100px);   
-/*         @include translate-animation-out(translate-price-out);
- */    }
+        @include translate(-100px);   
+    }
     &:hover .background {
-        transform: translateX(-100px);
-/*         @include translate-animation-out(translate-background-out);
- */    }
-}
-
-/* @keyframes translate-check-in {
-    from {
-        transform: translateX(0);
+        @include translate(-100px);
     }
-    to {
-        transform: translateX(-100px) rotate(360deg);
+    &:hover .wraper {
+        @include translate(-100px);
     }
 }
 
-@keyframes translate-check-out {
+@keyframes appearing {
     0% {
-        transform: translate(-100px);
+        opacity: 0;
+        transform: translateY(-20px);
     }
     100% {
-        transform: translate(0px);
+        opacity: 1;
+        transform: translateY(0px);
     }
 }
-
-@keyframes translate-price-in {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100px);
-    }
-}
-
-@keyframes translate-background-in {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100px);
-    }
-} */
 
 button {
     width: 250px;

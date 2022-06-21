@@ -16,6 +16,14 @@ a {
   text-transform: uppercase;
 }
 
+.fa-heart {
+  font-weight: 900;
+  font-size: 1.5rem;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-width: 2px;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -439,10 +447,7 @@ header .arrow i {
 }
 .menu__title .card__body--heart {
   align-self: center;
-}
-.menu__title .card__body--heart .fa-heart {
-  text-shadow: 0 0 1px black;
-  color: #f6f6f6;
+  padding-left: 15px;
 }
 .menu__cards {
   display: flex;
@@ -561,9 +566,17 @@ header .arrow i {
   margin: 10px 0;
   height: 80px;
   overflow: hidden;
+  animation: appearing 500ms ease-in-out forwards;
+}
+.menu__cards--card .menu__cards--card:nth-child(1n) {
+  animation-delay: 200ms;
+}
+.menu__cards--card .menu__cards--card:nth-child(2n) {
+  animation-delay: 400ms;
 }
 .menu__cards--card h3 {
   margin: 5px 0 5px 15px;
+  width: fit-content;
   display: inline-block;
   text-overflow: ellipsis;
   white-space: no-wrap;
@@ -571,9 +584,11 @@ header .arrow i {
   text-overflow: ellipsis;
   white-space: nowrap;
   min-height: 20px;
+  z-index: 1;
 }
 .menu__cards--card .excerpt {
   margin: 5px 0 5px 15px;
+  width: fit-content;
   display: inline-block;
   text-overflow: ellipsis;
   white-space: no-wrap;
@@ -581,6 +596,7 @@ header .arrow i {
   text-overflow: ellipsis;
   white-space: nowrap;
   min-height: 20px;
+  z-index: 1;
 }
 .menu__cards--card .price {
   position: relative;
@@ -588,21 +604,22 @@ header .arrow i {
   bottom: 35px;
   font-weight: bold;
   transition: transform 500ms ease-in-out;
-  /*         @include translate-animation-in(translate-price-in);
-   */
+  z-index: 1;
 }
-.menu__cards--card .check {
+.menu__cards--card .wraper {
+  transition: transform 500ms ease-in-out;
+  display: flex;
   position: relative;
-  justify-self: center;
   width: fit-content;
   left: 109%;
   bottom: 70%;
+  z-index: 1;
+  color: white;
+}
+.menu__cards--card .wraper .check {
   color: white;
   font-size: 25px;
   z-index: 1;
-  transition: transform 500ms ease-in-out;
-  /*         @include translate-animation-in(translate-check-in);
-   */
 }
 .menu__cards--card .background {
   background-color: #99e2d0;
@@ -612,60 +629,31 @@ header .arrow i {
   bottom: 107px;
   left: 105%;
   transition: transform 500ms ease-in-out;
-  /*         @include translate-animation-in(translate-background-in);
-   */
 }
 .menu__cards--card:hover .check {
-  transform: translateX(-100px) rotate(360deg);
-  /*         @include translate-animation-out(translate-check-out);
-   */
+  transform: rotate(360deg);
+  transition: transform 500ms ease-in-out;
 }
 .menu__cards--card:hover .price {
   transform: translateX(-100px);
-  /*         @include translate-animation-out(translate-price-out);
-   */
 }
 .menu__cards--card:hover .background {
   transform: translateX(-100px);
-  /*         @include translate-animation-out(translate-background-out);
-   */
+}
+.menu__cards--card:hover .wraper {
+  transform: translateX(-100px);
 }
 
-/* @keyframes translate-check-in {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100px) rotate(360deg);
-    }
+@keyframes appearing {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
-
-@keyframes translate-check-out {
-    0% {
-        transform: translate(-100px);
-    }
-    100% {
-        transform: translate(0px);
-    }
-}
-
-@keyframes translate-price-in {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100px);
-    }
-}
-
-@keyframes translate-background-in {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100px);
-    }
-} */
 button {
   width: 250px;
   height: 70px;

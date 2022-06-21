@@ -36,12 +36,17 @@ $font-general: Roboto, Arial, Helvetica, sans-serif;
     box-shadow: 0px 10px 41px -34px rgba(0, 0, 0, 1);
 }
 
-@mixin translate-animation-in($translate-object) {
-    animation: $translate-object 500ms ease-in-out both;
+@mixin translate($length) {
+    transform: translateX($length);
 }
 
-@mixin translate-animation-out($translate-object) {
-    animation: $translate-object 500ms ease-in-out both;
+@mixin appearing {
+    animation: appearing 500ms ease-in-out forwards;
+    @for $i from 1 to 3 {
+        .menu__cards--card:nth-child(#{$i}n) {
+            animation-delay: #{$i * 200}ms;
+        }
+    }
 }
 
 @mixin circle-loader($colour, $delay) {
