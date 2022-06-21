@@ -41,10 +41,9 @@ $font-general: Roboto, Arial, Helvetica, sans-serif;
 }
 
 @mixin appearing {
-    animation: appearing 500ms ease-in-out forwards;
     @for $i from 1 to 3 {
-        .menu__cards--card:nth-child(#{$i}n) {
-            animation-delay: #{$i * 200}ms;
+        .menu__cards .menu__cards--card:nth-child(#{$i}) {
+            animation-delay: #{$i*200ms};
         }
     }
 }
@@ -59,5 +58,10 @@ $font-general: Roboto, Arial, Helvetica, sans-serif;
     top: 50%;
     left: 50%;
     translate: (-50%);
-    animation: spin 2s cubic-bezier(.74,0,.16,1) $delay 3 forwards;
+    animation: spin-loader 4.5s cubic-bezier(.74,0,.16,1) $delay forwards;
 }
+
+@mixin disappear-loader {
+    animation:  disappear 4.5s forwards;
+}
+

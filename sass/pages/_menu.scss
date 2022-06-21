@@ -32,6 +32,8 @@
     &__cards {
         display: flex;
         flex-direction: column;
+        animation: appearing 500ms ease-in-out forwards;
+        @include appearing;
         &--underline {
             background-color: $colour-tertiary;
             width: 60px;
