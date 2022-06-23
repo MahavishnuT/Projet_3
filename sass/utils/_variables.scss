@@ -41,10 +41,29 @@ $font-general: Roboto, Arial, Helvetica, sans-serif;
     transform: translateX($length);
 }
 
-@mixin appearing {
+@mixin appearing-delay {
+    @keyframes appearing {
+        0% {
+            transform: translateY(-50px);
+        }
+    
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+    //@for $i from 1 to 4 {
+    //    .menu__cards--card:nth-child(#{$i}) {
+    //        animation-delay: #{$i*2s};
+    //    }
+    //}
+}
+
+@mixin appearing-delay-parents {
+
     @for $i from 1 to 4 {
-        .menu__cards--card:nth-child(#{$i}n) {
-            animation-delay: #{$i*1s};
+        .menu__cards--card:nth-child(#{$i}) {
+            animation-delay: #{$i*300ms};
         }
     }
 }
