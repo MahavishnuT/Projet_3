@@ -7,7 +7,8 @@
     margin: 10px 0;
     height: 80px;
     overflow: hidden;
-
+    animation: appearing 1s ease-out;
+    @include appearing;
     h3 {
         @include margin-cards;
         width: fit-content;
@@ -96,7 +97,7 @@ button {
     height: 70px;
     color: white;
     font-size: larger;
-    background-color: adjust-hue($color: #000000, $degrees: 0);
+    background-color: linear-gradient(to top, $colour-primary, $colour-secondary);
     border-radius: 50px;
     align-self: center;
     margin: 20px 0;

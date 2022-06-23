@@ -41,9 +41,9 @@ $font-general: Roboto, Arial, Helvetica, sans-serif;
 }
 
 @mixin appearing {
-    @for $i from 1 to 3 {
-        .menu__cards .menu__cards--card:nth-child(#{$i}) {
-            animation-delay: #{$i*200ms};
+    @for $i from 1 to 4 {
+        .menu__cards--card:nth-child(#{$i}n) {
+            animation-delay: #{$i*1s};
         }
     }
 }
