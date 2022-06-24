@@ -2,13 +2,29 @@ $colour-primary: #9356DC;
 $colour-secondary: #FF79DA;
 $colour-tertiary: #99e2d0;
 $colour-tertiary-font: darken($colour-tertiary, 33%);
-/* $colour-button-hover: lighten(linear-gradient(to top, $colour-primary, $colour-secondary), 33%);
- */$colour-footer: #353535;
+$colour-footer: #353535;
 $colour-background: #f6f6f6;
 $colour-background-darker: darken($colour-background, 5%);
 $colour-font: white;
 
 $font-general: Roboto, Arial, Helvetica, sans-serif;
+
+$breakpoints: (
+    desktop: 768px,
+    tablet: 576px
+);
+
+@mixin desktop-display {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+
+@mixin tablet-display {
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
 
 @mixin padding-menu {
     padding: 0 20px;
@@ -19,8 +35,8 @@ $font-general: Roboto, Arial, Helvetica, sans-serif;
     font-size: 40px;
 }
 
-@mixin margin-cards {
-    margin: 5px 0 5px 15px;
+@mixin margin-cards($margin-top) {
+    margin: $margin-top 0 5px 15px;
 }
 
 @mixin colour-primary-hover($colour) {
@@ -44,7 +60,7 @@ $font-general: Roboto, Arial, Helvetica, sans-serif;
 @mixin appearing-delay {
     @keyframes appearing {
         0% {
-            transform: translateY(-50px);
+            transform: translateY(50px);
         }
     
         100% {
@@ -52,18 +68,12 @@ $font-general: Roboto, Arial, Helvetica, sans-serif;
             transform: translateY(0px);
         }
     }
-    //@for $i from 1 to 4 {
-    //    .menu__cards--card:nth-child(#{$i}) {
-    //        animation-delay: #{$i*2s};
-    //    }
-    //}
 }
 
 @mixin appearing-delay-parents {
-
     @for $i from 1 to 4 {
         .menu__cards--card:nth-child(#{$i}) {
-            animation-delay: #{$i*300ms};
+            animation-delay: #{$i*150ms};
         }
     }
 }

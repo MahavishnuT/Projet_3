@@ -1,5 +1,3 @@
-/* $colour-button-hover: lighten(linear-gradient(to top, $colour-primary, $colour-secondary), 33%);
- */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap");
 * {
   font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -393,21 +391,22 @@ header {
   align-items: center;
   justify-items: center;
   box-shadow: 0px 10px 41px -34px rgb(0, 0, 0);
+  min-height: 90px;
 }
 header .logo {
   margin-left: auto;
   margin-right: auto;
 }
 header .logo img {
-  scale: 0.5;
+  width: 200px;
 }
 header .arrow {
   position: relative;
   left: 30px;
-  scale: 1.5;
 }
 header .arrow i {
   color: #353535;
+  font-size: 20px;
 }
 
 .image {
@@ -448,13 +447,13 @@ header .arrow i {
   flex-direction: column;
 }
 .menu__cards .menu__cards--card:nth-child(1) {
-  animation-delay: 300ms;
+  animation-delay: 150ms;
 }
 .menu__cards .menu__cards--card:nth-child(2) {
-  animation-delay: 600ms;
+  animation-delay: 300ms;
 }
 .menu__cards .menu__cards--card:nth-child(3) {
-  animation-delay: 900ms;
+  animation-delay: 450ms;
 }
 .menu__cards--underline {
   background-color: #99e2d0;
@@ -506,15 +505,30 @@ header .arrow i {
   list-style: none;
   padding-left: 0;
   margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+@media screen and (min-width: 768px) {
+  .fonctionnement ol {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 .fonctionnement ol li {
   background-color: #f6f6f6;
   height: 80px;
   border-radius: 15px;
-  margin: 15px 0;
+  margin: 15px 0 0 0;
   align-items: center;
   display: flex;
   box-shadow: 0px 10px 41px -34px rgb(0, 0, 0);
+}
+@media screen and (min-width: 768px) {
+  .fonctionnement ol li {
+    min-width: 267px;
+    width: 30%;
+  }
 }
 .fonctionnement ol li:hover {
   cursor: pointer;
@@ -571,10 +585,11 @@ header .arrow i {
   overflow: hidden;
   animation: appearing 500ms ease-in-out forwards;
   opacity: 0;
+  position: relative;
 }
 @keyframes appearing {
   0% {
-    transform: translateY(-50px);
+    transform: translateY(50px);
   }
   100% {
     opacity: 1;
@@ -582,33 +597,29 @@ header .arrow i {
   }
 }
 .menu__cards--card h3 {
-  margin: 5px 0 5px 15px;
+  margin: 13px 0 5px 15px;
   width: fit-content;
-  display: inline-block;
   text-overflow: ellipsis;
-  white-space: no-wrap;
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
   min-height: 20px;
   z-index: 1;
 }
 .menu__cards--card .excerpt {
   margin: 5px 0 5px 15px;
-  width: fit-content;
+  width: 50px;
   display: inline-block;
-  text-overflow: ellipsis;
-  white-space: no-wrap;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  border: 1px solid #000;
   min-height: 20px;
   z-index: 1;
 }
 .menu__cards--card .price {
-  position: relative;
-  left: 90%;
-  bottom: 35px;
+  position: absolute;
+  right: 25px;
+  bottom: 33px;
   font-weight: bold;
   transition: transform 500ms ease-in-out;
   z-index: 1;
@@ -616,10 +627,10 @@ header .arrow i {
 .menu__cards--card .wraper {
   transition: transform 500ms ease-in-out;
   display: flex;
-  position: relative;
+  position: absolute;
   width: fit-content;
-  left: 109%;
-  bottom: 70%;
+  right: -70px;
+  bottom: 25px;
   z-index: 1;
   color: white;
 }
@@ -627,14 +638,15 @@ header .arrow i {
   color: white;
   font-size: 25px;
   z-index: 1;
+  width: fit-content;
 }
 .menu__cards--card .background {
   background-color: #99e2d0;
   padding: 40px;
   width: 50px;
-  position: relative;
-  bottom: 107px;
-  left: 105%;
+  position: absolute;
+  bottom: 0px;
+  right: -150px;
   transition: transform 500ms ease-in-out;
 }
 .menu__cards--card:hover .check {
@@ -817,14 +829,15 @@ button::after {
   position: relative;
   color: transparent;
   -webkit-text-stroke-color: #000;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-fill-color: white;
   width: 25px;
   text-align: center;
   overflow: hidden;
-  transition: -webkit-text-fill-color 350ms ease-in-out;
-  background-clip: text;
-  -webkit-text-fill-color: white;
-  background-image: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
+  transition: -webkit-text-fill-color 250ms ease-in-out;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to top, #e72c83 0%, #a742c6 100%);
+  cursor: pointer;
   /*     &::after {
           content: '';
           position: absolute;

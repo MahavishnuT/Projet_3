@@ -37,14 +37,28 @@
         list-style: none;
         padding-left: 0;
         margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        @include desktop-display {
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
         li {
             background-color: $colour-background;
             height: 80px;
             border-radius: 15px;
-            margin: 15px 0;
+            margin: 15px 0 0 0;
             align-items: center;
             display: flex;
             @include box-shadow;
+            @include desktop-display {
+                min-width: 267px;
+                width: 30%;
+            }
+            @include tablet-display {
+                
+            }
             &:hover {
                 cursor: pointer;
                 @include colour-primary-hover($colour-primary);
