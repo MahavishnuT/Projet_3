@@ -44,6 +44,9 @@
             flex-direction: row;
             justify-content: space-evenly;
         }
+        @include tablet-display {
+            transform: translate(10%, 0%);
+        }
         li {
             background-color: $colour-background;
             height: 80px;
@@ -57,7 +60,7 @@
                 width: 30%;
             }
             @include tablet-display {
-                
+                max-width: 518px;
             }
             &:hover {
                 cursor: pointer;

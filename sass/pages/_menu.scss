@@ -1,5 +1,5 @@
 .image {
-    position: absolute;
+    // position: absolute;
     &-menu {
         width: 100%;
         img {
@@ -10,7 +10,7 @@
 
 .menu {
     position: relative;
-    bottom: -250px;
+    bottom: 50px;
     display: flex;
     flex-direction: column;
     background-color: $colour-background;
@@ -43,5 +43,12 @@
             margin-bottom: 5px;
         }
     }
-
+    .filling {
+        background-color: $colour-background;
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+    }
 }

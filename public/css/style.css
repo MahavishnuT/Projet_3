@@ -363,7 +363,6 @@ footer {
   display: flex;
   flex-direction: column;
   position: relative;
-  bottom: -250px;
 }
 footer h3 {
   font-family: Shrikhand, Arial, Helvetica, sans-serif;
@@ -409,9 +408,6 @@ header .arrow i {
   font-size: 20px;
 }
 
-.image {
-  position: absolute;
-}
 .image-menu {
   width: 100%;
 }
@@ -421,7 +417,7 @@ header .arrow i {
 
 .menu {
   position: relative;
-  bottom: -250px;
+  bottom: 50px;
   display: flex;
   flex-direction: column;
   background-color: #f6f6f6;
@@ -463,6 +459,14 @@ header .arrow i {
 }
 .menu__cards--title {
   margin-bottom: 5px;
+}
+.menu .filling {
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
 }
 
 .accueil {
@@ -515,6 +519,11 @@ header .arrow i {
     justify-content: space-evenly;
   }
 }
+@media screen and (min-width: 576px) {
+  .fonctionnement ol {
+    transform: translate(10%, 0%);
+  }
+}
 .fonctionnement ol li {
   background-color: #f6f6f6;
   height: 80px;
@@ -528,6 +537,11 @@ header .arrow i {
   .fonctionnement ol li {
     min-width: 267px;
     width: 30%;
+  }
+}
+@media screen and (min-width: 576px) {
+  .fonctionnement ol li {
+    max-width: 518px;
   }
 }
 .fonctionnement ol li:hover {
