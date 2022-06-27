@@ -40,12 +40,12 @@
         display: flex;
         flex-direction: column;
         gap: 0px;
+        @include tablet-display {
+            
+        }
         @include desktop-display {
             flex-direction: row;
             justify-content: space-evenly;
-        }
-        @include tablet-display {
-            transform: translate(10%, 0%);
         }
         li {
             background-color: $colour-background;
@@ -56,12 +56,12 @@
             display: flex;
             @include box-shadow;
             @include desktop-display {
-                min-width: 267px;
+                min-width: 247px;
                 width: 30%;
             }
-            @include tablet-display {
+/*             @include tablet-display {
                 max-width: 518px;
-            }
+            } */
             &:hover {
                 cursor: pointer;
                 @include colour-primary-hover($colour-primary);
@@ -106,6 +106,9 @@
     .cards {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
+        @include desktop-display {
+            flex-flow: row wrap;
+        }
     }
 }

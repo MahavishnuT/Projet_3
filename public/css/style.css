@@ -519,11 +519,6 @@ header .arrow i {
     justify-content: space-evenly;
   }
 }
-@media screen and (min-width: 576px) {
-  .fonctionnement ol {
-    transform: translate(10%, 0%);
-  }
-}
 .fonctionnement ol li {
   background-color: #f6f6f6;
   height: 80px;
@@ -532,16 +527,14 @@ header .arrow i {
   align-items: center;
   display: flex;
   box-shadow: 0px 10px 41px -34px rgb(0, 0, 0);
+  /*             @include tablet-display {
+                  max-width: 518px;
+              } */
 }
 @media screen and (min-width: 768px) {
   .fonctionnement ol li {
-    min-width: 267px;
+    min-width: 247px;
     width: 30%;
-  }
-}
-@media screen and (min-width: 576px) {
-  .fonctionnement ol li {
-    max-width: 518px;
   }
 }
 .fonctionnement ol li:hover {
@@ -585,7 +578,12 @@ header .arrow i {
 .restaurants .cards {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .restaurants .cards {
+    flex-flow: row wrap;
+  }
 }
 
 .menu__cards--card {
@@ -612,23 +610,23 @@ header .arrow i {
 }
 .menu__cards--card h3 {
   margin: 13px 0 5px 15px;
-  width: fit-content;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  width: 80%;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   min-height: 20px;
   z-index: 1;
+  transition: width 500ms ease-in-out;
 }
 .menu__cards--card .excerpt {
   margin: 5px 0 5px 15px;
-  width: 50px;
-  display: inline-block;
+  width: 80%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border: 1px solid #000;
   min-height: 20px;
   z-index: 1;
+  transition: width 500ms ease-in-out;
 }
 .menu__cards--card .price {
   position: absolute;
@@ -675,6 +673,12 @@ header .arrow i {
 }
 .menu__cards--card:hover .wraper {
   transform: translateX(-100px);
+}
+.menu__cards--card:hover .excerpt {
+  width: calc(80% - 100px);
+}
+.menu__cards--card:hover h3 {
+  width: calc(80% - 100px);
 }
 
 button {

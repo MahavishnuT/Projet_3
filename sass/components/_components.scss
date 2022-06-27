@@ -16,25 +16,24 @@
 
     h3 {
         @include margin-cards(13px);
-        width: fit-content;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        width: 80%;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         min-height: 20px;
         z-index: 1;
+        @include transition-ellipsis;
     }
 
     .excerpt {
         @include margin-cards(5px);
-        width: 50px;
-        display: inline-block;
+        width: 80%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        border: 1px solid #000;
         min-height: 20px;
         z-index: 1;
-
+        @include transition-ellipsis;
     }
 
     .price {
@@ -42,12 +41,12 @@
         right: 25px;
         bottom: 33px;
         font-weight: bold;
-        transition: transform 500ms ease-in-out;
+        @include transition-translate;
         z-index: 1;
     }
 
     .wraper {
-        transition: transform 500ms ease-in-out;
+        @include transition-translate;
         display: flex;
         position: absolute;
         width: fit-content;
@@ -71,12 +70,11 @@
         position: absolute;
         bottom: 0px;
         right: -150px;
-        transition: transform 500ms ease-in-out;
-    }
+        @include transition-translate;    }
 
     &:hover .check {
         transform: rotate(360deg);
-        transition: transform 500ms ease-in-out;
+        @include transition-translate;
     }
 
     &:hover .price {
@@ -89,6 +87,14 @@
 
     &:hover .wraper {
         @include translate(-100px);
+    }
+
+    &:hover .excerpt {
+        @include ellipsis;
+    }
+
+    &:hover h3 {
+        @include ellipsis;
     }
 }
 
