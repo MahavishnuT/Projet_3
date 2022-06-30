@@ -10,6 +10,20 @@
         text-align: center;
         font-weight: 600;
         font-size: 22px;
+        & input {
+            padding: 0;
+            margin: 0;
+            border: none;
+            color: black;
+            background: $colour-background-darker;
+            max-width: 200px;
+            &::placeholder {
+                color: black;
+                opacity: 1;
+                font-weight: bolder;
+                text-align: center;
+            }
+        }
         .fa-location-dot {
             padding: 10px;
         }
@@ -59,9 +73,6 @@
                 min-width: 247px;
                 width: 30%;
             }
-/*             @include tablet-display {
-                max-width: 518px;
-            } */
             &:hover {
                 cursor: pointer;
                 @include colour-primary-hover($colour-primary);
