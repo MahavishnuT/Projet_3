@@ -205,9 +205,8 @@ button {
 // Loader Animation
 
 .loader {
-    box-sizing: border-box;
-    overflow: hidden;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     position: fixed;

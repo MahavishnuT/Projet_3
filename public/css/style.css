@@ -796,9 +796,8 @@ button::after {
 }
 
 .loader {
-  box-sizing: border-box;
-  overflow: hidden;
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -815,9 +814,8 @@ button::after {
   border: 10px solid transparent;
   border-left-color: #9356DC;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50%;
+  top: 45%;
+  left: 45%;
   animation: spin-loader 4.5s cubic-bezier(0.74, 0, 0.16, 1) 0s forwards;
 }
 .loader .secondary {
@@ -827,9 +825,8 @@ button::after {
   border: 10px solid transparent;
   border-left-color: #FF79DA;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50%;
+  top: 45%;
+  left: 45%;
   animation: spin-loader 4.5s cubic-bezier(0.74, 0, 0.16, 1) 150ms forwards;
 }
 .loader .tertiary {
@@ -839,9 +836,8 @@ button::after {
   border: 10px solid transparent;
   border-left-color: #99e2d0;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50%;
+  top: 45%;
+  left: 45%;
   animation: spin-loader 4.5s cubic-bezier(0.74, 0, 0.16, 1) 300ms forwards;
 }
 

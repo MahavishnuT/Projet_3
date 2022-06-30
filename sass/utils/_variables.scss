@@ -105,9 +105,8 @@ $breakpoints: (
     border: 10px solid transparent;
     border-left-color: $colour;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: (-50%);
+    top: 45%;
+    left: 45%;
     animation: spin-loader 4.5s cubic-bezier(.74,0,.16,1) $delay forwards;
 }
 
