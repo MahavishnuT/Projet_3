@@ -104,13 +104,12 @@ $breakpoints: (
     border-radius: 50%;
     border: 10px solid transparent;
     border-left-color: $colour;
-    position: absolute;
-    top: 45%;
-    left: 45%;
+    position: fixed;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
     animation: spin-loader 4.5s cubic-bezier(.74,0,.16,1) $delay forwards;
 }
 
 @mixin disappear-loader {
     animation:  disappear 4.5s forwards;
 }
-

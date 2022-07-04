@@ -605,6 +605,8 @@ header .arrow i {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .restaurants .cards {
@@ -742,10 +744,11 @@ button::after {
 }
 
 .card {
-  width: 400px;
+  min-width: 350px;
+  max-width: 400px;
   box-shadow: 0px 5px 20px #999;
   border-radius: 10px;
-  margin: 20px auto;
+  margin: 20px 10px;
 }
 .card a {
   text-decoration: none;
@@ -767,11 +770,11 @@ button::after {
 .card a .card__image--nouveau {
   display: flex;
   background-color: #99e2d0;
-  position: relative;
+  position: absolute;
   width: 80px;
   height: 30px;
   top: 10px;
-  left: 305px;
+  right: 10px;
   align-items: center;
   justify-content: center;
   color: #2fa487;
@@ -789,6 +792,7 @@ button::after {
   position: relative;
   left: 90%;
   bottom: 30px;
+  width: fit-content;
 }
 .card a .card__body--title {
   margin: 10px 0 5px 0;
@@ -797,7 +801,6 @@ button::after {
 
 .loader {
   display: flex;
-  position: relative;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -813,9 +816,9 @@ button::after {
   border-radius: 50%;
   border: 10px solid transparent;
   border-left-color: #9356DC;
-  position: absolute;
-  top: 45%;
-  left: 45%;
+  position: fixed;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
   animation: spin-loader 4.5s cubic-bezier(0.74, 0, 0.16, 1) 0s forwards;
 }
 .loader .secondary {
@@ -824,9 +827,9 @@ button::after {
   border-radius: 50%;
   border: 10px solid transparent;
   border-left-color: #FF79DA;
-  position: absolute;
-  top: 45%;
-  left: 45%;
+  position: fixed;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
   animation: spin-loader 4.5s cubic-bezier(0.74, 0, 0.16, 1) 150ms forwards;
 }
 .loader .tertiary {
@@ -835,9 +838,9 @@ button::after {
   border-radius: 50%;
   border: 10px solid transparent;
   border-left-color: #99e2d0;
-  position: absolute;
-  top: 45%;
-  left: 45%;
+  position: fixed;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
   animation: spin-loader 4.5s cubic-bezier(0.74, 0, 0.16, 1) 300ms forwards;
 }
 
