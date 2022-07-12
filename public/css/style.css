@@ -39,7 +39,7 @@ html {
 body {
   margin: 0 auto;
   padding: 0;
-  max-width: 1000px;
+  max-width: 1400px;
 }
 
 /**
@@ -393,18 +393,14 @@ header {
   box-shadow: 0px 10px 41px -34px rgb(0, 0, 0);
   min-height: 90px;
 }
-header .logo {
+header img {
+  width: 200px;
   margin-left: auto;
   margin-right: auto;
 }
-header .logo img {
-  width: 200px;
-}
-header .arrow {
+header i {
   position: relative;
   left: 30px;
-}
-header .arrow i {
   color: #353535;
   font-size: 20px;
 }
@@ -424,13 +420,6 @@ header .arrow i {
   background-color: #f6f6f6;
   padding: 0 20px;
   border-radius: 50px 50px 0 0;
-}
-@media screen and (min-width: 768px) {
-  .menu__wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
 }
 .menu__title {
   margin-top: 20px;
@@ -463,8 +452,10 @@ header .arrow i {
   animation-delay: 600ms;
 }
 @media screen and (min-width: 768px) {
-  .menu__cards {
-    width: 30%;
+  .menu__cards--all {
+    min-width: 70%;
+    justify-content: center;
+    margin: 0 auto;
   }
 }
 .menu__cards--underline {
@@ -473,8 +464,20 @@ header .arrow i {
   height: 5px;
   margin-bottom: 5px;
 }
+@media screen and (min-width: 768px) {
+  .menu__cards--underline {
+    position: relative;
+    left: 10%;
+  }
+}
 .menu__cards--title {
   margin-bottom: 5px;
+}
+@media screen and (min-width: 768px) {
+  .menu__cards--title {
+    position: relative;
+    left: 10%;
+  }
 }
 .menu .filling {
   background-color: #f6f6f6;
@@ -535,7 +538,7 @@ header .arrow i {
   flex-direction: column;
   margin-left: 20px;
 }
-.fonctionnement ol {
+.fonctionnement ul {
   list-style: none;
   padding-left: 0;
   margin-right: 20px;
@@ -544,55 +547,56 @@ header .arrow i {
   gap: 0px;
 }
 @media screen and (min-width: 768px) {
-  .fonctionnement ol {
+  .fonctionnement ul {
     flex-direction: row;
     justify-content: space-evenly;
   }
 }
-.fonctionnement ol li {
+.fonctionnement ul li {
   background-color: #f6f6f6;
   height: 80px;
   border-radius: 15px;
   margin: 15px 0 0 0;
   align-items: center;
   display: flex;
+  position: relative;
+  width: 100%;
+  font-weight: bold;
+  font-size: larger;
   box-shadow: 0px 10px 41px -34px rgb(0, 0, 0);
 }
 @media screen and (min-width: 768px) {
-  .fonctionnement ol li {
+  .fonctionnement ul li {
     min-width: 247px;
     width: 30%;
   }
 }
-.fonctionnement ol li:hover {
+.fonctionnement ul li:hover {
   cursor: pointer;
   background-color: #f2eafb;
 }
-.fonctionnement ol li:hover .fa-solid {
+.fonctionnement ul li:hover .fa-solid {
   color: #9356DC;
 }
-.fonctionnement ol li div {
-  display: flex;
-  align-items: baseline;
-  position: relative;
-  right: 14px;
-  width: 100%;
-  font-weight: bold;
-  font-size: larger;
-}
-.fonctionnement ol li div .number {
+.fonctionnement ul li .number {
   color: white;
   background-color: #9356DC;
   padding: 5px 10px;
   border-radius: 100%;
   margin-right: auto;
+  position: relative;
+  left: -14px;
 }
-.fonctionnement ol li div .fa-solid {
+.fonctionnement ul li .fa-solid {
   margin-right: auto;
   color: #5d5d5d;
+  position: relative;
+  left: -14px;
 }
-.fonctionnement ol li div .text-fonctionnement {
+.fonctionnement ul li .text-fonctionnement {
   margin-right: auto;
+  position: relative;
+  left: -14px;
 }
 
 .restaurants {
@@ -799,6 +803,9 @@ button::after {
   margin: 10px 0 5px 0;
   font-weight: bolder;
 }
+.card a .card__body--title h3 {
+  margin: 0;
+}
 
 .loader {
   display: flex;
@@ -807,7 +814,9 @@ button::after {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  top: 0;
+  left: 0;
   z-index: 100;
   animation: disappear 4.5s forwards;
 }
@@ -879,7 +888,9 @@ button::after {
   width: 25px;
   text-align: center;
   overflow: hidden;
-  transition: -webkit-text-fill-color 250ms ease-in-out;
+  -webkit-transition-property: -webkit-text-fill-color;
+  -webkit-transition-duration: 250ms;
+  -webkit-transition-timing-function: ease-in-out;
   -webkit-background-clip: text;
   background-image: linear-gradient(to top, #e72c83 0%, #a742c6 100%);
   cursor: pointer;

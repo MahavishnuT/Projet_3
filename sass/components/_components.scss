@@ -199,6 +199,9 @@ button {
             &--title {
                 margin: 10px 0 5px 0;
                 font-weight: bolder;
+                h3 {
+                    margin: 0;
+                }
             }
         }
     }
@@ -213,7 +216,9 @@ button {
     position: fixed;
     background-color: rgba($color: #000000, $alpha: 0.5);
     height: 100vh;
-    width: 100%;
+    width: 100vw;
+    top: 0;
+    left: 0;
     z-index: 100;
     @include disappear-loader;
     .primary {
@@ -271,7 +276,9 @@ button {
     width: 25px;
     text-align: center;
     overflow: hidden;
-    transition: -webkit-text-fill-color 250ms ease-in-out;
+    -webkit-transition-property: -webkit-text-fill-color;
+    -webkit-transition-duration: 250ms;
+    -webkit-transition-timing-function: ease-in-out;
     -webkit-background-clip: text;
     background-image: linear-gradient(to top, #e72c83 0%,#a742c6 100%);
     cursor: pointer;

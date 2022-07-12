@@ -15,13 +15,6 @@
     background-color: $colour-background;
     @include padding-menu;
     border-radius: 50px 50px 0 0;
-    &__wrapper {
-        @include desktop-display {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
-    }
     &__title {
         margin-top: 20px;
         display: flex;
@@ -39,17 +32,29 @@
         display: flex;
         flex-direction: column;
         @include appearing-delay-parents;
-        @include desktop-display {
-            width: 30%;
+        &--all {
+            @include desktop-display {
+                min-width: 70%;
+                justify-content: center;
+                margin: 0 auto;
+            }
         }
         &--underline {
             background-color: $colour-tertiary;
             width: 60px;
             height: 5px;
             margin-bottom: 5px;
+            @include desktop-display {
+                position: relative;
+                left: 10%;
+            }
         }
         &--title {
             margin-bottom: 5px;
+            @include desktop-display {
+                position: relative;
+                left: 10%;
+            }
         }
     }
     .filling {
