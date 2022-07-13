@@ -8,9 +8,13 @@
   },
   "author": "TomP",
   "license": "ISC",
-  "browserlist": "last 4 versions",
+  "browserslist": "last 4 versions",
   "dependencies": {
+    "autoprefixer": "^10.4.7",
     "node-sass": "^7.0.1",
     "postcss-cli": "^9.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer-core": "^6.0.1"
   }
 }
